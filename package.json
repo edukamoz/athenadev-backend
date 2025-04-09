@@ -4,7 +4,7 @@
   "description": "projeto backend da AthenaDev da Fatec Votorantim",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "ts-node-dev --respawn --transpile-only server.ts"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,13 @@
   },
   "homepage": "https://github.com/edukamoz/athenadev-backend#readme",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.8.3"
   }
 }
