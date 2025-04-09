@@ -24,7 +24,8 @@
   "homepage": "https://github.com/edukamoz/athenadev-backend#readme",
   "dependencies": {
     "dotenv": "^16.4.7",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "mysql2": "^3.14.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
