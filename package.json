@@ -1,0 +1,25 @@
+{
+  "name": "athenadev-backend",
+  "version": "1.0.0",
+  "description": "projeto backend da AthenaDev da Fatec Votorantim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edukamoz/athenadev-backend.git"
+  },
+  "keywords": [
+    "projeto",
+    "fatec",
+    "votorantim",
+    "athena"
+  ],
+  "author": "Eduardo Kamo, Nelson Junior, Iago Yuri, Lucas Consani, Matheus Nery",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edukamoz/athenadev-backend/issues"
+  },
+  "homepage": "https://github.com/edukamoz/athenadev-backend#readme"
+}
