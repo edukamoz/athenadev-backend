@@ -7,9 +7,9 @@ export async function connectToDatabase(app: Express): Promise<Pool> {
   try {
     const dbConfig = {
       host: process.env.MYSQL_HOST || 'db4free.net',
-      user: process.env.MYSQL_USER || 'seu_usuario',
-      password: process.env.MYSQL_PASSWORD || 'sua_senha',
-      database: process.env.MYSQL_DATABASE || 'seu_banco',
+      user: process.env.MYSQL_USER || 'sa',
+      password: process.env.MYSQL_PASSWORD || '.',
+      database: process.env.MYSQL_DATABASE || 'athenaDB',
       waitForConnections: true,
       connectionLimit: 10,
       queueLimit: 0
