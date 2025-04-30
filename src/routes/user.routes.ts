@@ -1,9 +1,11 @@
 import express, { Request, Response } from 'express'
+import { listUsers } from '../controllers/user.controller';
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.status(200).send("Teste realizado com sucesso")
+router.get('/', async (req: Request, res: Response) => {
+    const users = await listUsers();
+    res.json(users)
 })
 
 router.post('/', (req: Request, res: Response) => {
