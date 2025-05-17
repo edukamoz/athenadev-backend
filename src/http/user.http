@@ -1,0 +1,22 @@
+// Teste da API REST de Usuários
+@baseURL = http://localhost:3000/api/users
+###
+# @prompt senha
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "email": "eduardokamoz@gmail.com",
+    "password": "edu123",
+    "name": "Eduardo Kamo",
+    "photo": "3"
+}
+
+###
+# @prompt senha
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+
+}

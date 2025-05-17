@@ -4,12 +4,14 @@ import sequelize from "../config/database";
 
 export type UserCreationalAttributes = Optional<User, "id">
 
-export class UserModel extends Model <User> {
+export class UserModel extends Model <User, UserCreationalAttributes> {
     public id!: number;
     public email!: string;
     public password!: string;
     public name!: string;
     public score!: number;
+    public timeOnSite!: Date;
+    public photo!: Blob;
 }
 
 UserModel.init(

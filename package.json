@@ -25,14 +25,20 @@
   },
   "homepage": "https://github.com/edukamoz/athenadev-backend#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
     "sequelize": "^6.37.7",
     "sequelize-typescript": "^2.1.6",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.18",
     "@types/express": "^5.0.1",
+    "@types/jsonwebtoken": "^9.0.9",
     "@types/node": "^22.14.0",
     "@types/sequelize": "^4.28.20",
     "sequelize-cli": "^6.6.2",
