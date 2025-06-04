@@ -1,7 +1,7 @@
 // Instale a extensão REST Client para efetuar os testes
 // Teste da API REST de Usuários
 @baseURL = http://localhost:3000/api/users
-@id = 550e8400-e29b-41d4-a716-446655440000
+@id = 1
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNTUwZTg0MDAtZTI5Yi00MWQ0LWE3MTYtNDQ2NjU1NDQwMDAwIn0sImlhdCI6MTczMzMzNzk1NiwiZXhwIjoxNzMzNDI0MzU2fQ.example_token_signature
 
 ###
@@ -23,9 +23,9 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-  "name": "João Silva",
-  "email": "joao.silva@email.com",
-  "password": "senha123456",
+  "name": "Roberto Carlos",
+  "email": "roberto.carlos@email.com",
+  "password": "senharuim123",
   "photo": null
 }
 
@@ -43,7 +43,7 @@ Authorization: Bearer {{token}}
 
 ###
 // PUT - Atualiza usuário com ID específico
-PUT {{baseURL}}/550e8400-e29b-41d4-a716-446655440001
+PUT {{baseURL}}/1
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
