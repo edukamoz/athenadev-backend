@@ -1,45 +1,50 @@
-'use strict';
-
-const { DataTypes } = require('sequelize');
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('user', {
+  async up(queryInterface, Sequelize) {
+    await queryInterface.createTable("user", {
       id_user: {
+        type: Sequelize.INTEGER,
         primaryKey: true,
         autoIncrement: true,
         allowNull: false,
-        type: DataTypes.INTEGER
-      },
-      name: {
-        allowNull: false,
-        type: DataTypes.STRING(50)
       },
       email: {
+        type: Sequelize.STRING(100),
         allowNull: false,
-        type: DataTypes.STRING(65)
+        unique: true,
       },
       password: {
+        type: Sequelize.STRING(100),
         allowNull: false,
-        type: DataTypes.STRING(80)
+      },
+      name: {
+        type: Sequelize.STRING(100),
+        allowNull: false,
       },
       score: {
-        allowNull: true,
-        type: DataTypes.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        defaultValue: 0,
       },
-      timeOnSite: {
-        allowNull: true,
-        type: DataTypes.DATE
+      time_on_site: {
+        type: Sequelize.DATE,
+        allowNull: false,
+        defaultValue: Sequelize.NOW,
       },
       photo: {
+        type: Sequelize.TEXT,
         allowNull: true,
-        type: DataTypes.BLOB
-      }
-    });
+      },
+    })
+
+    // Criar índices
+    await queryInterface.addIndex("user", ["email"], {
+      unique: true,
+      name: "user_email_unique",
+    })
   },
 
-  async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('users')
-  }
-};
+  async down(queryInterface, Sequelize) {
+    await queryInterface.dropTable("user")
+  },
+}
