@@ -15,15 +15,13 @@ export const createUser = async (
     email: string,
     password: string,
     name: string,
-    photo?: string | null,
 ): Promise<User> => {
     const user = await UserModel.create({
         email,
         password,
         name,
-        photo: photo || null,
         score: 0,
-        timeOnSite: new Date(),
+        createdAt: new Date(),
     })
     return user
 }

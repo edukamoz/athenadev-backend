@@ -10,8 +10,7 @@ export class UserModel extends Model<User, UserCreationalAttributes> {
     public password!: string
     public name!: string
     public score!: number
-    public timeOnSite!: Date
-    public photo!: string | null
+    public createdAt!: Date
 }
 
 UserModel.init(
@@ -44,16 +43,11 @@ UserModel.init(
             defaultValue: 0,
             field: "score",
         },
-        timeOnSite: {
+        createdAt: {
             allowNull: false,
             type: DataTypes.DATE,
             defaultValue: DataTypes.NOW,
-            field: "time_on_site", // Corrigido o field name
-        },
-        photo: {
-            allowNull: true,
-            type: DataTypes.TEXT, // Mudei de BLOB para TEXT para armazenar base64
-            field: "photo", // Corrigido o field name
+            field: "createdAt", // Corrigido o field name
         },
     },
     {

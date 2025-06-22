@@ -4,6 +4,5 @@ export interface User {
     password: string
     name: string
     score: number
-    timeOnSite: Date
-    photo?: string | null
+    createdAt: Date
 }
