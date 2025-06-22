@@ -26,7 +26,6 @@ Authorization: Bearer {{token}}
   "name": "Roberto Carlos",
   "email": "roberto.carlos@email.com",
   "password": "senharuim123",
-  "photo": null
 }
 
 ###
@@ -52,7 +51,7 @@ Authorization: Bearer {{token}}
   "email": "maria.oliveira@email.com",
   "password": "novaSenha789",
   "score": 200,
-  "timeOnSite": "2024-12-05T10:30:00.000Z"
+  "createdAt": "2024-12-05T10:30:00.000Z"
 }
 
 ###
@@ -77,7 +76,6 @@ Authorization: Bearer {{token}}
   "name": "Ana Costa",
   "email": "ana.costa@email.com",
   "password": "senhaSegura123",
-  "photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
 }
 
 ###
