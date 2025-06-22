@@ -1,0 +1,205 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "User API",
+        "version": "1.0.0",
+        "description": "API para gerenciamento de usuários"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000/users"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "summary": "Listar todos os usuários",
+                "tags": ["User"],
+                "responses": {
+                    "200": {
+                        "description": "Lista de usuários",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": { "$ref": "#/components/schemas/User" }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro ao buscar usuários"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Criar um novo usuário",
+                "tags": ["User"],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UserCreate"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Usuário criado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/User" }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Campos obrigatórios faltando"
+                    },
+                    "500": {
+                        "description": "Erro ao criar usuário"
+                    }
+                }
+            }
+        },
+        "/{id}": {
+            "get": {
+                "summary": "Buscar usuário por ID",
+                "tags": ["User"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usuário encontrado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/User" }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro ao buscar usuário"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Atualizar usuário por ID",
+                "tags": ["User"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": { "$ref": "#/components/schemas/UserUpdate" }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Usuário atualizado",
+                        "content": {
+                            "application/json": {
+                                "schema": { "$ref": "#/components/schemas/User" }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro ao atualizar usuário"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Deletar usuário por ID",
+                "tags": ["User"],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": { "type": "string" }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Usuário deletado com sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "message": { "type": "string" }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Usuário não encontrado"
+                    },
+                    "500": {
+                        "description": "Erro ao deletar usuário"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "User": {
+                "type": "object",
+                "properties": {
+                    "id": { "type": "integer", "example": 1 },
+                    "email": { "type": "string", "example": "user@email.com" },
+                    "password": { "type": "string", "example": "hashedpassword" },
+                    "name": { "type": "string", "example": "Eduardo" },
+                    "score": { "type": "integer", "example": 0 },
+                    "createdAt": { "type": "string", "format": "date-time", "example": "2024-06-01T12:00:00Z" }
+                }
+            },
+            "UserCreate": {
+                "type": "object",
+                "required": ["email", "password", "name"],
+                "properties": {
+                    "email": { "type": "string", "example": "user@email.com" },
+                    "password": { "type": "string", "example": "senha123" },
+                    "name": { "type": "string", "example": "Eduardo" }
+                }
+            },
+            "UserUpdate": {
+                "type": "object",
+                "properties": {
+                    "email": { "type": "string", "example": "user@email.com" },
+                    "password": { "type": "string", "example": "novasenha" },
+                    "name": { "type": "string", "example": "Eduardo" },
+                    "score": { "type": "integer", "example": 10 }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "User",
+            "description": "Operações relacionadas a usuários"
+        }
+    ]
+}
