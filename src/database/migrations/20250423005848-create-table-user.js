@@ -26,10 +26,14 @@ module.exports = {
         allowNull: false,
         defaultValue: 0,
       },
-      createdAt: {
+      time_on_site: {
         type: Sequelize.DATE,
         allowNull: false,
         defaultValue: Sequelize.NOW,
+      },
+      photo: {
+        type: Sequelize.TEXT,
+        allowNull: true,
       },
     })
 
